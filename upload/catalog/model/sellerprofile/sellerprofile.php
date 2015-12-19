@@ -623,7 +623,7 @@ class Modelsellerprofilesellerprofile extends Model {
 			SET seller_changegroup = '" . (int)$data['seller_group_id'] . "'	WHERE customer_id = '" . (int)$this->customer->getId() . "' 
 			");
 			
-			//$this->db->query("DELETE FROM " . DB_PREFIX . "category_to_seller WHERE seller_id = '" . $this->customer->getId(). "' AND status='0'");
+			$this->db->query("DELETE FROM " . DB_PREFIX . "category_to_seller WHERE seller_id = '" . $this->customer->getId(). "' AND status='0'");
 			foreach ($data['seller_category'] as $category_id) {
 				$this->db->query("INSERT INTO " . DB_PREFIX . "category_to_seller SET seller_id = '" . $this->customer->getId() . "', category_id = '" . (int)$category_id . "'");
 			}

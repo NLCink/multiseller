@@ -33,6 +33,7 @@ $_['column_ip']             = 'IP';
 $_['column_total']          = 'Total Accounts';
 $_['column_action']         = 'Action';
 $_['column_seller_group_description']         = 'Description';
+$_['column_categories']         = 'Categories';
 // Entry
 $_['entry_seller_group']  = 'Seller Group';
 $_['entry_firstname']       = 'First Name';

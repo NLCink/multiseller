@@ -220,7 +220,9 @@ class ModelSellerseller extends Model {
 
 		if ($seller_info) {
 			$this->db->query("UPDATE " . DB_PREFIX . "customer SET seller_approved = '1' ,seller_date_added = NOW() WHERE customer_id = '" . (int)$seller_id . "'");
-
+			
+			$this->db->query("UPDATE " . DB_PREFIX . "category_to_seller SET status = '1' WHERE seller_id = '" .(int)$seller_id. "'");
+			
 			$this->load->language('seller/mail_seller');
 
 			$this->load->model('setting/store');

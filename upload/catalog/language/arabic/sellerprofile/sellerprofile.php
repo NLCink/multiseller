@@ -122,7 +122,7 @@ $_['column_product_limit']         = 'عدد المنتجات';
 $_['column_commission_rate']      = 'قيمة العمولة';
 $_['column_commission']      = 'العمولة';
 $_['column_subscription_duration']      = 'مدة الاشتراك';
-
+$_['column_categories']      = 'اﻷقسام';
 $_['text_subscription_duration']      = '%s شهر/أشهر';
 
 $_['text_commission']      = 'العمولة';

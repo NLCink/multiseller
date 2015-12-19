@@ -1204,6 +1204,8 @@ class ControllerSellerseller extends Controller {
 		$data['entry_description'] = $this->language->get('entry_description');
 		$data['entry_amount'] = $this->language->get('entry_amount');
 		$data['entry_points'] = $this->language->get('entry_points');
+		$data['button_approve'] = $this->language->get('button_approve');
+		$data['button_disapprove'] = $this->language->get('button_disapprove');
 
 		$data['help_safe'] = $this->language->get('help_safe');
 		$data['help_points'] = $this->language->get('help_points');
@@ -1441,6 +1443,14 @@ class ControllerSellerseller extends Controller {
 		} else {
 			$data['instagram'] = '';
 		}
+		
+		
+			$data['seller_approved'] = $seller_info['seller_approved'];
+			$data['approve']        = $this->url->link('seller/seller/approve', 'token=' . $this->session->data['token'] . '&seller_id=' . $this->request->get['seller_id'] . $url, 'SSL');
+			$data['upgrade_sellergroup']        = $this->url->link('seller/seller/upgrade_sellergroup', 'token=' . $this->session->data['token'] . '&seller_id=' . $this->request->get['seller_id'] . $url, 'SSL');
+			$data['disapprove']        = $this->url->link('seller/seller/disapprove', 'token=' . $this->session->data['token'] . '&seller_id=' . $this->request->get['seller_id'] . $url, 'SSL');
+			
+	
 
 		// Custom Fields
 		$this->load->model('customer/custom_field');

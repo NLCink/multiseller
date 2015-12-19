@@ -522,7 +522,7 @@ if($('#tab-request_membership input[name=\'agree\']').prop('checked')){
 	$.ajax({
 		url: 'index.php?route=sellerprofile/sellerprofile/request_membership&seller_id=<?php echo $seller_id; ?>',
 		type: 'POST',
-		dataType: 'json',
+		dataType: 'html',
 		data: $('#tab-request_membership .scrollbox-'+seller_group_id+' input[name=\'seller_category[]\']').serialize() +'&seller_group_name=' + encodeURIComponent($('#tab-request_membership input[name=\'selected\']:checkbox:checked').attr("id")) + '&description=' + encodeURIComponent($('#tab-request_membership input[name=\'description\']').val())+ '&seller_group_id=' + encodeURIComponent($('#tab-request_membership input[name=\'selected\']:checkbox:checked').val()),
 		beforeSend: function() {
 			$('#button-request_membership').button('loading');
@@ -532,6 +532,8 @@ if($('#tab-request_membership input[name=\'agree\']').prop('checked')){
 		},
 		success: function(html) {
 			//$('.alert').remove();
+			$('#request_membership').load('index.php?route=sellerprofile/sellerprofile/request_membership&seller_id=<?php echo $seller_id; ?>');
+
 
 			$('#request_membership').html(html);
 

@@ -3,8 +3,19 @@
   <div class="page-header">
     <div class="container-fluid">
       <div class="pull-right">
+		  	  <?php if (!$seller_approved) { ; ?>
+                    <a href="<?php echo $approve; ?>" data-toggle="tooltip" title="<?php echo $button_approve; ?>" class="btn btn-success"><i class="fa fa-thumbs-o-up"></i></a>
+                    <?php } else { ?>
+                    <button type="button" class="btn btn-success" disabled><i class="fa fa-thumbs-o-up"></i></button>
+                    <?php } ?>
+                    <?php if ($seller_approved) { ; ?>
+                    <a href="<?php echo $disapprove; ?>" data-toggle="tooltip" title="<?php echo $button_disapprove; ?>" class="btn btn-danger"><i class="fa fa-thumbs-o-down"></i></a>
+                    <?php } else { ?>
+                    <button type="button" class="btn btn-danger" disabled><i class="fa fa-thumbs-o-down"></i></button>
+                    <?php } ?>
         <button type="submit" form="form-seller" data-toggle="tooltip" title="<?php echo $button_save; ?>" class="btn btn-primary"><i class="fa fa-save"></i></button>
         <a href="<?php echo $cancel; ?>" data-toggle="tooltip" title="<?php echo $button_cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+     
       <h1><?php echo $heading_title; ?></h1>
       <ul class="breadcrumb">
         <?php foreach ($breadcrumbs as $breadcrumb) { ?>
