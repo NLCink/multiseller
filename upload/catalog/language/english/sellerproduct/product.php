@@ -161,6 +161,7 @@ $_['text_disabled']                 = 'Disabled';
 $_['text_price_notice']                 = '** The price should be in %s';
 
 
-$_['text_product_limit']                 = 'Warning: You Cant Copy More Than (%s) products';
+$_['text_copy_product_limit']                 = 'Warning: You Cant Copy More Than (%s) products';
+$_['text_product_limit']       = 'Warning: You have reached a limit for adding product !';
 $_['button_add']                    = 'Add New';
 $_['button_delete']                 = 'Delete';

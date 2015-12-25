@@ -167,7 +167,7 @@ $_['text_enabled']          	    = 'تمكين';
 $_['text_disabled']         	    = 'تعطيل';
 $_['text_price_notice']                 = '** السعر يجب أن يكون بالـ %s';
 
-$_['text_product_limit']                  = 'تحذير: لايمكنك نسخ أكثر من (%s) منتج';
-
+$_['text_copy_product_limit']                  = 'تحذير: لايمكنك نسخ أكثر من (%s) منتج';
+$_['text_product_limit']       = 'تحذير: لقد وصلت للحد المسموح به لاضافة المنتجات !';
 $_['button_add']                 = 'ادراج';
 $_['button_delete']                 = 'حذف';

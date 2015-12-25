@@ -580,6 +580,19 @@ class ControllersellerproductProduct extends Controller {
 		$data['button_edit'] = $this->language->get('button_edit');
 		$data['button_delete'] = $this->language->get('button_delete');
 		$data['button_filter'] = $this->language->get('button_filter');
+		
+		$this->load->model('sellerproduct/seller');
+		$this->load->model('sellerproduct/product');
+		
+		$product_limit =$this->model_sellerproduct_seller->getsellergroupIdBysellerId();
+		$product_total = $this->model_sellerproduct_product->getTotalProducts();
+		
+		
+		
+		if ($product_total>=$product_limit['product_limit'] && $product_limit['product_limit'] !='0' ) {
+			
+				$this->error['warning'] = $this->language->get('text_product_limit');
+		}
 
 		
 
@@ -690,6 +703,8 @@ class ControllersellerproductProduct extends Controller {
 
 		$data['sort'] = $sort;
 		$data['order'] = $order;
+		
+		
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
@@ -1547,10 +1562,10 @@ class ControllersellerproductProduct extends Controller {
 
 		$product_limit =$this->model_sellerproduct_seller->getsellergroupIdBysellerId();
 		
-		if (count($selectCount) > ( $product_limit['product_limit'] - $product_total)) {
+		if (count($selectCount) > ( $product_limit['product_limit'] - $product_total) && $product_limit['product_limit'] != '0') {
 			
 	
-			$this->error['warning'] = sprintf($this->language->get('text_product_limit'), $product_limit['product_limit'] - $product_total);
+			$this->error['warning'] = sprintf($this->language->get('text_copy_product_limit'), $product_limit['product_limit'] - $product_total);
 		}
 
 		return !$this->error;
@@ -1566,7 +1581,7 @@ class ControllersellerproductProduct extends Controller {
 		
 		
 		
-		if ($product_total>=$product_limit['product_limit'] ) {
+		if ($product_total>=$product_limit['product_limit'] && $product_limit['product_limit'] !='0' ) {
 			
 				$this->error['warning'] = sprintf($this->language->get('text_product_limit'), $product_limit['product_limit']);
 		}
