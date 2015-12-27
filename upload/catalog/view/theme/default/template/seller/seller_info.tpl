@@ -9,9 +9,9 @@
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
     <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-8'; ?>
+    <?php $class = 'col-sm-9'; ?>
     <?php } else { ?>
-    <?php $class = 'col-sm-8'; ?>
+    <?php $class = 'col-sm-9'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <h2><?php echo $heading_title; ?></h2>
@@ -122,7 +122,7 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?>
  
-      <div class="col-sm-4">
+      <div class="col-sm-3">
       <form class="form-horizontal" id="form-sellerreview">
                 <div id="sellerreview"></div>
                  <?php if ($sellerreviewstatus){ ?>

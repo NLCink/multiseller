@@ -130,5 +130,5 @@ $_['tab_categories'] ='Categories';
 
 $_['help_category'] = 'categories assigned to this seller will override his group categories.';
 $_['entry_category']         = 'Categories';
-
+$_['tab_category']         = 'Categories';
 
